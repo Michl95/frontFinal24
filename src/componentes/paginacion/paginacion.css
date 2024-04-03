@@ -4,3 +4,9 @@
   justify-content: space-between;
   margin: 10px 0;
 }
+
+.numero-pagina.active {
+  font-weight: bold;
+  background-color: black;
+  color: white;
+}

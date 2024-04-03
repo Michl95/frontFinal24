@@ -1,6 +1,7 @@
 .tarjeta-personaje {
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 
 .tarjeta-personaje > img {

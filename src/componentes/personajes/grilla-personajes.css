@@ -1,6 +1,10 @@
 .grilla-personajes {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
-  justify-items: center;
+  grid-template-columns: repeat(4, 1fr); /* Creates a 4-column layout */
+  grid-auto-rows: minmax(100px, auto); /* Adjust the minmax to your desired height */
+  gap: 16px; /* This is the space between your items */
+  padding: 16px; /* Adjust padding as needed */
+  justify-content: center; /* Center grid items horizontally */
+  align-items: start; /* Align grid items to the start of the grid area */
 }
+

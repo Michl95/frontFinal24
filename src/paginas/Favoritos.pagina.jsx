@@ -1,21 +1,21 @@
 import GrillaPersonajes from "../componentes/personajes/grilla-personajes.componente";
+import { useAppSelector } from '../redux/store/store';
 
-/**
- * Esta es la pagina de favoritos. Aquí se deberan ver todos los personajes marcados como favoritos
- * 
- * Uso: 
- * ``` <PaginaFavoritos /> ```
- * 
- * @returns la pagina de favoritos
- */
 const PaginaFavoritos = () => {
-    return <div className="container">
-        <div className="actions">
-            <h3>Personajes Favoritos</h3>
-            <button className="danger">Test Button</button>
+    // Seleccionar todos los personajes marcados como favoritos de la lista allCharacters
+    const favoritos = useAppSelector(state => 
+        state.characters.allCharacters.filter(character => character.isFavorite)
+    );
+
+    return (
+        <div className="container">
+            <div className="actions">
+                <h3>Personajes Favoritos</h3>
+            </div>
+            {/* Pasar favoritos al componente GrillaPersonajes */}
+            <GrillaPersonajes characters={favoritos} />
         </div>
-        <GrillaPersonajes />
-    </div>
+    );
 }
 
-export default PaginaFavoritos
+export default PaginaFavoritos;
